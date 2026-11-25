@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - D&D таверна</title>
+    <!-- Подключаем единый файл стилей -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <!-- ================= ШАПКА ================= -->
+    <header class="header">
+        <div class="logo">
+            <!-- Иконка глобуса -->
+            <img src="img/logo.png" alt="Логотип" class="rounded-logo">
+            <span>В добрый путь - D&D таверна</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="booking.html">Бронь</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="card.html">Бонусная карта</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="events.html">Ивенты</a></li>
+                <li><a href="index.html">Главная</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= ОСНОВНОЙ КОНТЕНТ ================= -->
+    <main class="container home-grid">
+        
+        <!-- Блок 1: Текст слева -->
+        <div class="home-card text-card">
+            <p>Решил отдохнуть от приключений и очень хочу пропустить кружечку-другую в уютной таверне? Отлично, тогда бронируй столик! Просто напиши нам, сколько вас будет и когда, и мы оставим для тебя лучший уголок — главное, не забудь предупредить, если твой персонаж любит сидеть у окна, а то, наоборот, боится сквозняков.</p>
+            
+            <!-- Кнопка с data-target для открытия модалки -->
+            <button class="button home-btn" data-target="modal-table">забронировать столик</button>
+        </div>
+
+        <!-- Блок 2: Картинка справа (верхняя) -->
+        <div class="home-image">
+            <img src="img/stol.PNG" alt="Интерьер таверны">
+        </div>
+
+        <!-- Блок 3: Картинка слева (нижняя) -->
+        <div class="home-image">
+            <img src="img/zal.PNG" alt="Столики в таверне">
+        </div>
+
+        <!-- Блок 4: Текст справа -->
+        <div class="home-card text-card">
+            <p>Задумали большое приключение, но негде развернуться? Или просто хотите собрать всю свою партию, чтобы отпраздновать победу над боссом? Тогда бронируй у нас целый зал! У нас есть просторное помещение, где можно и карту на стол раскатать, и в настолки сыграть, и просто поорать от души, не мешая другим гостям. Расскажи нам, насколько человек рассчитана ваша компания и какое время вам удобнее.</p>
+            
+            <button class="button home-btn" data-target="modal-hall">забронировать зал</button>
+        </div>
+
+    </main>
+
+    <!-- ================= МОДАЛЬНЫЕ ОКНА ================= -->
+    <!-- Окно для столика -->
+    <dialog id="modal-table" class="modal">
+        <div class="modal-header">
+            <h2>Бронирование столика</h2>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Чтобы забронировать столик, позвоните нам по номеру:</p>
+            <div class="highlight-box">8 917 047 44 01</div>
+            <p style="font-size: 0.9em; color: #666;">Наш администратор уточнит все детали.</p>
+        </div>
+    </dialog>
+
+    <!-- Окно для зала -->
+    <dialog id="modal-hall" class="modal">
+        <div class="modal-header">
+            <h2>Бронирование зала</h2>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Для бронирования зала свяжитесь с нами по телефону:</p>
+            <div class="highlight-box">8 917 047 44 01</div>
+            <p style="font-size: 0.9em; color: #666;">Мы обсудим количество гостей и время.</p>
+        </div>
+    </dialog>
+
+    <!-- ================= ПОДВАЛ ================= -->
+    <footer>
+        <div class="footer-info">
+            <div>
+                <p><strong>Компания:</strong><br>Номер телефона - 8 917 047 44 01</p>
+                <div class="social-icons">
+                    <a href="#"><img src="img/vk.png" alt="VK"></a>
+                    <a href="#"><img src="img/google.png" alt="OK"></a>
+                    <a href="#"><img src="img/mail.png" alt="Mail"></a>
+                </div>
+            </div>
+            <div>
+                <p><strong>Адрес - Четверг, 51</strong><br>
+                Пн-пт - 15:00-02:00<br>
+                Сб-вс - 16:00-05:00</p>
+            </div>
+        </div>
+        
+        <div class="footer-nav">
+            <ul>
+                <li><a href="booking.html">Бронь</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="card.html">Бонусная карта</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="events.html">Ивенты</a></li>
+            </ul>
+        </div>
+        
+        <p style="font-size: 0.8em; margin-top: 15px; opacity: 0.7;">
+            Наша политика распространяется на всех - при входе на территорию таверны вас попросят показать документ, удостоверяющий ваш возраст и личность, просим отнестись с пониманием и уважением к нашей позиции.<br>
+            ©copyright 2026
+        </p>
+    </footer>
+
+    <!-- Подключаем скрипт -->
+    <script src="script.js"></script>
+</body>
+</html>

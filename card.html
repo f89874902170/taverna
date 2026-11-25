@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бонусная карта - D&D таверна</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= ШАПКА ================= -->
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="Логотип" class="rounded-logo">
+            <span>В добрый путь - D&D таверна</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="booking.html">Бронь</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="card.html">Бонусная карта</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="events.html">Ивенты</a></li>
+                <li><a href="index.html">Главная</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= ОСНОВНОЙ КОНТЕНТ ================= -->
+    <main class="container">
+        
+        <!-- Баннер -->
+        <div class="banner banner-mint">
+            <div>
+                <h1>Бонусная карта</h1>
+                <p>На этой странице вы можете оформить бонусную карту таверны и узнать об условиях программы лояльности. Заполните простую форму, чтобы начать получать бонусы за визиты и специальные предложения.</p>
+            </div>
+        </div>
+
+        <!-- Секция с формой и кубиками -->
+        <div class="card-section">
+            
+            <!-- Кубик слева -->
+            <div class="card-dice left-dice">
+                <img src="img/dice.png" alt="Кубик d20">
+            </div>
+
+            <!-- Форма -->
+            <div class="card-form-container">
+                <h2>Заполните форму, чтобы оформить бонусную карту</h2>
+                
+                <form id="bonusCardForm" novalidate>
+                    <div class="form-group">
+                        <label for="userName">Ваше имя</label>
+                        <input type="text" id="userName" name="name" placeholder="Екатерина" required minlength="2">
+                        <span class="error-text" id="error-name"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userPhone">Номер телефона</label>
+                        <input type="tel" id="userPhone" name="phone" placeholder="+7 999 888 77 66" required>
+                        <span class="error-text" id="error-phone"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userDate">Дата рождения</label>
+                        <input type="date" id="userDate" name="date" required>
+                        <span class="error-text" id="error-date"></span>
+                    </div>
+
+                    <button type="submit" class="button submit-btn">оформить</button>
+                </form>
+            </div>
+
+            <!-- Кубик справа -->
+            <div class="card-dice right-dice">
+                <img src="img/dice.png" alt="Кубик d20">
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ================= ПОДВАЛ ================= -->
+    <footer>
+        <div class="footer-info">
+            <div>
+                <p><strong>Компания:</strong><br>Номер телефона - 8 917 047 44 01</p>
+                <div class="social-icons">
+                    <a href="#"><img src="img/vk.png" alt="VK"></a>
+                    <a href="#"><img src="img/google.png" alt="OK"></a>
+                    <a href="#"><img src="img/mail.png" alt="Mail"></a>
+                </div>
+            </div>
+            <div>
+                <p><strong>Адрес - Четверг, 51</strong><br>
+                Пн-пт - 15:00-02:00<br>
+                Сб-вс - 16:00-05:00</p>
+            </div>
+        </div>
+        
+        <div class="footer-nav">
+            <ul>
+                <li><a href="booking.html">Бронь</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="card.html">Бонусная карта</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="events.html">Ивенты</a></li>
+            </ul>
+        </div>
+        
+        <p style="font-size: 0.8em; margin-top: 15px; opacity: 0.7;">
+            Наша политика распространяется на всех - при входе на территорию таверны вас попросят показать документ, удостоверяющий ваш возраст и личность, просим отнестись с пониманием и уважением к нашей позиции.<br>
+            ©copyright 2026
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

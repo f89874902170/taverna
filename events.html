@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ивенты - D&D таверна</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ШАПКА (остается без изменений) -->
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="Логотип" class="rounded-logo">
+            <span>В добрый путь - D&D таверна</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="booking.html">Бронь</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="card.html">Бонусная карта</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="events.html">Ивенты</a></li>
+                <li><a href="index.html">Главная</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <div class="container">
+        
+        <!-- Баннер с кнопкой -->
+        <div class="banner banner-mint events-header-banner">
+        <div class="banner-text">
+            <h1>Ивенты</h1>
+            <p>На этой странице вы можете связаться с нами по любым вопросам - пишите на почту info@taverna.ru, и мы ответим в кратчайшие сроки. Здесь же собраны фото-отчеты наших гостей с прошлых бронирований, встреч и мероприятий. Мы будем рады, если вы поделитесь с нами впечатлениями - это помогает нам становиться лучше.</p>
+        </div>
+        
+        <!-- Кнопка вызова модального окна -->
+        <button class="button review-btn" data-target="modal-review">Оставить отзыв</button>
+    </div>
+
+        <!-- Сетка с отзывами -->
+        <div class="events-grid">
+            <!-- Карточка 1 -->
+            <div class="event-card">
+                <img src="img/1otz.jpg" alt="Ивент">
+                <div class="event-content">
+                    <strong>Иванна Я.</strong>
+                    <p>Отличное место для игры - прекрасный зал, удобные кресла, отзывчивые ведущие и атмосферная музыка. Часто здесь собираемся, а наш мастер игр Кирилл всегда радует.</p>
+                    <div class="event-date">01.09.2026</div>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="event-card">
+                <img src="img/2otz.jpg" alt="Ивент">
+                <div class="event-content">
+                    <strong>Иванна А.</strong>
+                    <p>Прошли здесь целую кампанию на много сессий, и это прочно ассоциируется у меня с этим местом, а атмосфера тут способствует полному погружению и приключениям.</p>
+                    <div class="event-date">05.09.2026</div>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="event-card">
+                <img src="img/3otz.jpg" alt="Ивент">
+                <div class="event-content">
+                    <strong>Валера Р.</strong>
+                    <p>Бронировали зал для дня рождения в D&D-стилистике. Квест отлично сочетался с игрой. Отдельно спасибо за то, что весь коллектив оставил в костюмах персонажей.</p>
+                    <div class="event-date">07.09.2026</div>
+                </div>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="event-card">
+                <img src="img/4otz.jpg" alt="Ивент">
+                <div class="event-content">
+                    <strong>Анна К.</strong>
+                    <p>Прекрасный мастер, который подобрал абсолютно любой отряд, учитывая все пожелания. Каждый раз погружаешься в мир фэнтези.</p>
+                    <div class="event-date">10.09.2026</div>
+                </div>
+            </div>
+
+            <!-- Карточка 5 -->
+            <div class="event-card">
+                <img src="img/5otz.jpg" alt="Ивент">
+                <div class="event-content">
+                    <strong>Игорь И.</strong>
+                    <p>Очень понравилось, как он описывает локации для нас, голосом и антуражем. Отдельное спасибо за интересный сюжет.</p>
+                    <div class="event-date">15.09.2026</div>
+                </div>
+            </div>
+
+            <!-- Карточка 6 -->
+            <div class="event-card">
+                <img src="img/6otz.jpg" alt="Ивент">
+                <div class="event-content">
+                    <strong>Владислав С.</strong>
+                    <p>Замечательная подборка для начала - как и стандартные варианты, так и авторские истории. Мастера всегда готовы пойти навстречу.</p>
+                    <div class="event-date">18.09.2026</div>
+                </div>
+            </div>
+
+            <!-- Карточка 7 -->
+            <div class="event-card">
+                <img src="img/7otz.jpg" alt="Ивент">
+                <div class="event-content">
+                    <strong>Екатерина Г.</strong>
+                    <p>Отличное место для компании! Впервые играла в D&D, все прошло легко и интересно. Ведущий помог разобраться.</p>
+                    <div class="event-date">05.10.2026</div>
+                </div>
+            </div>
+
+            <!-- Карточка 8 -->
+            <div class="event-card">
+                <img src="img/8otz.jpg" alt="Ивент">
+                <div class="event-content">
+                    <strong>Андрей З.</strong>
+                    <p>Просто очень довольны атмосферой, персоналом и кухней. Отдельное спасибо за то, что мы играли в тишине.</p>
+                    <div class="event-date">19.11.2026</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО (Скрыто по умолчанию) -->
+    <!-- Это должно быть на странице! -->
+<dialog id="modal-review" class="modal">
+    <div class="modal-header">
+        <h2>Оставить отзыв</h2>
+        <button class="close-btn">&times;</button>
+    </div>
+    <div class="modal-body">
+        <p>Пожалуйста, отправьте ваш отзыв на нашу электронную почту:</p>
+        <div class="highlight-box">info@taverna.ru</div>
+    </div>
+</dialog>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <div class="footer-info">
+            <div>
+                <p><strong>Компания:</strong><br>Номер телефона - 8 917 047 44 01</p>
+                <div class="social-icons">
+                    <a href="#"><img src="img/vk.png" alt="VK"></a>
+                    <a href="#"><img src="img/google.png" alt="OK"></a>
+                    <a href="#"><img src="img/mail.png" alt="Mail"></a>
+                </div>
+            </div>
+            <div>
+                <p><strong>Адрес - Четверг, 51</strong><br>
+                Пн-пт - 15:00-02:00<br>
+                Сб-вс - 16:00-05:00</p>
+            </div>
+        </div>
+        
+        <div class="footer-nav">
+            <ul>
+                <li><a href="booking.html">Бронь</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="card.html">Бонусная карта</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="events.html">Ивенты</a></li>
+            </ul>
+        </div>
+        
+        <p style="font-size: 0.8em; margin-top: 15px; opacity: 0.7;">
+            Наша политика распространяется на всех - при входе на территорию таверны вас попросят показать документ, удостоверяющий ваш возраст и личность, просим отнестись с пониманием и уважением к нашей позиции.<br>
+            ©copyright 2026
+        </p>
+    </footer>
+
+    <!-- Подключаем JS файл -->
+    <script src="script.js"></script>
+</body>
+</html>
