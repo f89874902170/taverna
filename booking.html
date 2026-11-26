@@ -74,7 +74,7 @@
         </div>
     </dialog>
 
-    <!-- Окно для зала -->
+       <!-- Окно для зала -->
     <dialog id="modal-hall" class="modal">
         <div class="modal-header">
             <h2>Бронирование зала</h2>
@@ -87,50 +87,54 @@
         </div>
     </dialog>
 
-    <section class="calc-section">
-    <form class="card-form-container calc-form" id="calcForm">
-        <h2>Калькулятор брони</h2>
+    <!-- ================= КАЛЬКУЛЯТОР БРОНИ ================= -->
+    <div class="container">
+        <section class="calc-section">
+            <form class="card-form-container calc-form" id="calcForm">
+                <h2>Калькулятор брони</h2>
 
-        <div class="form-group">
-            <label for="calcPeople">Сколько человек</label>
-            <select id="calcPeople" name="people">
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-        </div>
+                <div class="form-group">
+                    <label for="calcPeople">Сколько человек</label>
+                    <select id="calcPeople" name="people">
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
 
-        <div class="form-group">
-            <label for="calcHours">На сколько часов</label>
-            <select id="calcHours" name="hours">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-            </select>
-        </div>
+                <div class="form-group">
+                    <label for="calcHours">На сколько часов</label>
+                    <select id="calcHours" name="hours">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
 
-        <button type="submit" class="submit-btn">Узнать</button>
-    </form>
+                <button type="submit" class="submit-btn">Узнать</button>
+            </form>
 
-    <div class="card-form-container calc-result" id="calcResult" aria-live="polite">
-        <h2>Стоимость</h2>
-        <p class="calc-result-text">Выберите параметры и нажмите «Узнать».</p>
+            <div class="card-form-container calc-result" id="calcResult" aria-live="polite">
+                <h2>Стоимость</h2>
+                <p class="calc-result-text">Выберите параметры и нажмите «Узнать».</p>
+            </div>
+        </section>
     </div>
-</section>
+
     <!-- ================= ПОДВАЛ ================= -->
     <footer>
         <div class="footer-info">
