@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 3. ПОКАЗ ПЛАШКИ УСПЕХА НА ГЛАВНОЙ СТРАНИЦЕ
+    // 2.5. ПОКАЗ ПЛАШКИ УСПЕХА НА ГЛАВНОЙ СТРАНИЦЕ
     // ==========================================
     // Проверяем, есть ли флаг в localStorage
     if (localStorage.getItem('bonusCardCreated') === 'true') {
@@ -138,5 +138,32 @@ document.addEventListener('DOMContentLoaded', () => {
             // Удаляем элемент из DOM через время после скрытия
             setTimeout(() => toast.remove(), 500); 
         }, 4000);
+    }
+    // ==========================================
+    // 3. ПОИСК ПО СТРАНИЧКЕ МЕНЮ
+    // ==========================================
+     const menuSearch = document.getElementById('menuSearch');
+    if (menuSearch) {
+        const menuItems = document.querySelectorAll('.menu-item');
+        const emptyMsg = document.getElementById('menuEmptyMsg');
+
+        menuSearch.addEventListener('input', () => {
+            const query = menuSearch.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            menuItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = '';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            if (emptyMsg) {
+                emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+            }
+        });
     }
 });
