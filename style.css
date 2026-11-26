@@ -280,11 +280,11 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
    5. АДАПТИВНОСТЬ (Собрано в одном месте)
    ========================================= */
 @media (max-width: 992px) {
-     .news-grid { grid-template-columns: 1fr; gap: 40px 0; }
+    .news-grid { grid-template-columns: minmax(0, 1fr); gap: 40px 0; }
 
     .news-card {
         flex-direction: column;
-        align-items: stretch;
+        align-items: stretch;   /* главное: растягиваем детей на всю ширину */
         gap: 0;
         width: 100%;
     }
@@ -292,17 +292,17 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
     .news-image {
         width: 100%;
         height: 250px;
-        border-radius: 20px 20px 0 0;   /* скруглены только верхние углы */
-        box-shadow: none;
+        border-radius: 20px 20px 0 0;
     }
 
     .news-content {
+        flex: none;             /* в колонке flex:1 не нужен */
         width: 100%;
         box-sizing: border-box;
-        margin: 0;                       /* убрали -20px и -30px */
+        margin: 0;
         padding: 20px;
         min-height: 0;
-        border-radius: 0 0 20px 20px;    /* скруглены только нижние углы */
+        border-radius: 0 0 20px 20px;
     }
 
     .news-date-bottom {
@@ -310,7 +310,6 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
         margin: 12px 0 0 20px;
         text-align: left;
     }
-}
 
 @media (max-width: 768px) {
     .about-info-grid { grid-template-columns: 1fr; }
