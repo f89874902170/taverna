@@ -72,7 +72,6 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
    ========================================= */
 .container { max-width: 1200px; margin: 20px auto; padding: 20px; }
 
-/* Универсальный баннер */
 .banner {
     padding: 30px 40px;
     border-radius: 25px;
@@ -87,7 +86,6 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
 .banner h1 { margin-top: 0; margin-bottom: 15px; font-size: 2em; }
 .banner p { margin: 0; line-height: 1.5; font-size: 1.1em; max-width: 90%; }
 
-/* Универсальные секции */
 .section {
     display: flex; align-items: center; margin-bottom: 40px;
     background-color: #D5EBE4; padding: 30px;
@@ -99,7 +97,6 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
 .section-image { flex: 1; text-align: center; }
 .section-image img { border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
 
-/* Кнопки */
 .button {
     display: inline-block;
     background: rgba(255, 255, 255, 0.5);
@@ -118,7 +115,6 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
 }
 .button:hover { background: #fff; color: #45B980; transform: translateY(-2px); }
 
-/* Модальные окна */
 .modal {
     border: none; border-radius: 20px; padding: 0;
     width: 90%; max-width: 450px;
@@ -148,8 +144,8 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
    4. СТРАНИЦЫ
    ========================================= */
 
-/* --- Главная (Шахматка) --- */
-.home-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
+/* --- Главная (Шахматка, если используется) --- */
+.home-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px; margin: 30px 0; }
 .home-card.text-card {
     background-color: #D5EBE4; border-radius: 30px; padding: 40px;
     display: flex; flex-direction: column; justify-content: space-between;
@@ -222,7 +218,7 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
 .leader-info span { font-size: 0.95em; color: #45B980; font-weight: bold; }
 
 /* --- Новости --- */
-.news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 30px; margin: 30px 0 50px; }
+.news-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px 30px; margin: 30px 0 50px; }
 .news-card { position: relative; display: flex; align-items: center; gap: 20px; }
 .news-image {
     flex-shrink: 0; width: 200px; height: 200px; border-radius: 20px;
@@ -277,49 +273,150 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
 .toast-notification.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 
 /* =========================================
-   5. АДАПТИВНОСТЬ (Собрано в одном месте)
+   5. ГЛАВНАЯ СТРАНИЦА (index.html)
+   ========================================= */
+.about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.about-text-block {
+    background-color: #D5EBE4;
+    border-radius: 30px;
+    padding: 40px;
+}
+.about-text-block p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1.05em;
+    color: #333;
+}
+.about-text-block p:last-child { margin-bottom: 0; }
+
+/* Картинка справа: absolute, чтобы не растягивать строки грида */
+.about-side-image {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    position: relative;
+    min-height: 420px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.about-side-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-bottom-block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    min-width: 0;
+    background-color: #D5EBE4;
+    border-radius: 30px;
+    padding: 40px 40px 40px 120px; /* слева место под кубик */
+}
+
+.about-dice {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    width: 140px;
+    margin: 0;
+    transform: translateY(-50%) rotate(-15deg);
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+}
+
+.about-bottom-content { flex: 1; min-width: 0; }
+.about-bottom-content p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 1.05em;
+    color: #333;
+}
+
+a.about-btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 20px;
+    font-size: 1.5em;
+    font-family: 'NewFontSSS', cursive;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+a.about-btn:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #45B980;
+    text-decoration: none;
+}
+
+/* =========================================
+   6. АДАПТИВНОСТЬ (всегда в самом конце)
    ========================================= */
 @media (max-width: 992px) {
-       .menu-grid, .events-grid { grid-template-columns: repeat(2, 1fr); }
+    .menu-grid, .events-grid { grid-template-columns: repeat(2, 1fr); }
     .section, .section.reverse { flex-direction: column; text-align: center; }
     .banner { flex-direction: column; text-align: center; }
     .banner p { max-width: 100%; }
-    .home-grid { grid-template-columns: 1fr; }
+    .home-grid { grid-template-columns: minmax(0, 1fr); }
     .home-btn { font-size: 1.2em; padding: 15px 20px; }
     .leadership-grid { grid-template-columns: repeat(2, 1fr); }
     .card-dice { display: none; }
     .card-form-container { padding: 30px; }
+
+    /* Новости */
     .news-grid { grid-template-columns: minmax(0, 1fr); gap: 40px 0; }
-
-    .news-card {
-        flex-direction: column;
-        align-items: stretch;   /* главное: растягиваем детей на всю ширину */
-        gap: 0;
-        width: 100%;
-    }
-
-    .news-image {
-        width: 100%;
-        height: 250px;
-        border-radius: 20px 20px 0 0;
-    }
-
+    .news-card { flex-direction: column; align-items: stretch; gap: 0; width: 100%; }
+    .news-image { width: 100%; height: 250px; border-radius: 20px 20px 0 0; }
     .news-content {
-        flex: none;             /* в колонке flex:1 не нужен */
-        width: 100%;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 20px;
-        min-height: 0;
+        flex: none; width: 100%; box-sizing: border-box;
+        margin: 0; padding: 20px; min-height: 0;
         border-radius: 0 0 20px 20px;
     }
+    .news-date-bottom { position: static; margin: 12px 0 0 20px; text-align: left; }
 
-    .news-date-bottom {
-        position: static;
-        margin: 12px 0 0 20px;
-        text-align: left;
+    /* Главная */
+    .about-layout { grid-template-columns: minmax(0, 1fr); }
+    .about-side-image {
+        grid-column: 1;
+        grid-row: auto;
+        height: 400px;
+        min-height: 0;
+        order: -1;
+    }
+    .about-bottom-block {
+        flex-direction: column;
+        text-align: center;
+        padding: 70px 30px 30px;
+        margin-top: 30px;
+    }
+    .about-dice {
+        left: 50%;
+        top: -50px;
+        width: 110px;
+        transform: translateX(-50%) rotate(-15deg);
     }
 }
+
 @media (max-width: 768px) {
     .about-info-grid { grid-template-columns: 1fr; }
 }
@@ -333,129 +430,7 @@ footer .footer-nav ul li a { text-decoration: none; color: #333; font-weight: bo
     .banner h1 { font-size: 1.5em; }
     .leadership-grid { grid-template-columns: 1fr; }
     .leadership-section { padding: 20px; }
-}
-/* =========================================
-   ИСПРАВЛЕНИЯ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ (index.html)
-   ========================================= */
-
-/* Сетка для главной страницы */
-.about-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Две колонки */
-    grid-template-rows: auto auto; /* Две строки */
-    gap: 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-/* Верхний текстовый блок */
-.about-text-block {
-    background-color: #D5EBE4;
-    border-radius: 30px;
-    padding: 40px;
-}
-
-.about-text-block p {
-    margin-top: 0;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    font-size: 1.05em;
-    color: #333;
-}
-.about-text-block p:last-child { margin-bottom: 0; }
-
-/* Правая картинка (растягиваем на две строки) */
-.about-side-image {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.about-side-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Нижний блок (Кубик + Текст + Кнопка) */
-.about-bottom-block {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    background-color: #D5EBE4;
-    border-radius: 30px;
-    padding: 40px;
-    position: relative; /* Чтобы кубик мог вылезать за края */
-}
-
-/* Кубик */
-.about-dice {
-    flex-shrink: 0;
-    width: 150px;
-    margin-left: -60px; /* Сдвигаем кубик влево */
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
-    transform: rotate(-15deg);
-}
-
-.about-bottom-content { flex: 1; }
-
-.about-bottom-content p {
-    margin-top: 0;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    font-size: 1.05em;
-    color: #333;
-}
-
-/* =========================================
-   КНОПКА "ЗАБРОНИРОВАТЬ" (Стили как на макете)
-   ========================================= */
-a.about-btn {
-    display: block; /* Делаем блочной, чтобы занимала всю ширину */
-    background-color: rgba(255, 255, 255, 0.4); /* Полупрозрачный белый */
-    color: #fff; /* Белый текст */
-    border: none;
-    padding: 15px 40px;
-    border-radius: 20px;
-    font-size: 1.5em;
-    font-family: 'NewFontSSS', cursive; /* Рукописный шрифт */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-    letter-spacing: 2px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-decoration: none; /* Убираем подчеркивание ссылки */
-    box-sizing: border-box;
-    width: 100%;
-}
-
-a.about-btn:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-    color: #45B980;
-    text-decoration: none;
-}
-
-/* --- Адаптивность --- */
-@media (max-width: 992px) {
-    .about-layout { grid-template-columns: 1fr; }
-    
-    .about-side-image {
-        grid-column: 1;
-        grid-row: auto;
-        height: 400px;
-        order: -1; /* Картинка поднимается наверх */
-    }
-    
-    .about-bottom-block {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .about-dice {
-        margin-left: 0;
-        margin-top: -80px;
-        width: 120px;
-    }
+    .about-text-block { padding: 25px; }
+    .about-side-image { height: 300px; }
+    a.about-btn { font-size: 1.2em; padding: 12px 20px; }
 }
