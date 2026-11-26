@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // ==========================================
-    // 1. ОБЩАЯ ЛОГИКА МОДАЛЬНЫХ ОКОН (как было)
+    // 0. ОБЩАЯ ЛОГИКА МОДАЛЬНЫХ ОКОН (как было)
     // ==========================================
     const openButtons = document.querySelectorAll('[data-target]');
     openButtons.forEach(btn => {
@@ -26,6 +26,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+     // ==========================================
+    // 1. КАЛЬКУЛЯТОР ДЛЯ БРОНИ
+    // ==========================================
+    const calcForm = document.getElementById('calcForm');
+    if (calcForm) {
+        const RATE = 100; // ₽ в час с человека
+        const result = document.getElementById('calcResult');
+    
+        calcForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const people = Number(document.getElementById('calcPeople').value);
+            const hours = Number(document.getElementById('calcHours').value);
+    
+            if (!(people >= 3 && people <= 10) || !(hours >= 1 && hours <= 12)) {
+                result.innerHTML = '<h2>Стоимость</h2><p class="calc-result-text">Проверьте значения: гостей от 3 до 10, часов от 1 до 12.</p>';
+                return;
+            }
+    
+            const total = people * hours * RATE;
+            result.innerHTML = `
+                <h2>Стоимость</h2>
+                <div class="calc-price">${total.toLocaleString('ru-RU')} ₽</div>
+                <p class="calc-detail">${people} чел. × ${hours} ч × ${RATE} ₽</p>
+            `;
+        });
+    }
+    
     // ==========================================
     // 2. ЛОГИКА ФОРМЫ БОНУСНОЙ КАРТЫ
     // ==========================================
